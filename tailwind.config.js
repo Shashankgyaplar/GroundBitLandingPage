@@ -15,7 +15,7 @@ export default {
         dark: '#0f172a',
       },
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         hi: ['"Noto Sans Devanagari"', "sans-serif"],
         kn: ['"Noto Sans Kannada"', "sans-serif"],
         te: ['"Noto Sans Telugu"', "sans-serif"],

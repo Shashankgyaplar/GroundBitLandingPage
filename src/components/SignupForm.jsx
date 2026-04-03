@@ -9,146 +9,155 @@ export default function SignupForm() {
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const form = e.target;
+        const name = form.name.value.trim();
+        const rawPhone = form.phone.value.replace(/\s+/g, '');
+        const language = form.language.value;
+
+        if (!name) {
+            toast.error(t('form.err_name', 'Name is required.'));
+            return;
+        }
+
+        if (rawPhone.length !== 10 || !/^\d+$/.test(rawPhone)) {
+            toast.error(t('form.err_phone', 'Enter valid 10-digit number'));
+            return;
+        }
+
+        if (!language) {
+            toast.error(t('form.err_lang', 'Select a language'));
+            return;
+        }
+
         setLoading(true);
 
-        // Simulate API call
-        setTimeout(() => {
-            setLoading(false);
+        try {
+            const response = await fetch("https://16-170-106-41.nip.io/api/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name,
+                    phone: "91" + rawPhone,
+                    language
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error('Registration failed');
+            }
+
             setSuccess(true);
-            toast.success('Registration successful!', {
-                duration: 4000,
-                position: 'top-center',
+
+            toast.success(t('form.success_toast', 'Registration successful!'), {
                 style: {
                     background: '#25D366',
-                    color: '#fff',
-                    fontWeight: 'bold',
-                    padding: '16px',
-                    borderRadius: '16px'
-                },
+                    color: '#fff'
+                }
             });
-        }, 1500);
+
+        } catch (error) {
+            toast.error(error.message || t('form.err_general', 'Something went wrong'));
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
-        <section className="py-24 px-4 bg-slate-50 border-b border-slate-100" aria-labelledby="form-heading">
-            <div className="max-w-2xl mx-auto relative z-10">
-                <div
-                    className="bg-white border border-slate-200 p-8 md:p-12 text-left"
-                >
-                    <div className="text-center mb-12 relative z-10">
-                        <h2 id="form-heading" className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark mb-4 tracking-tight">{t('form.title', 'Protect Your Farm')}</h2>
-                        <p className="text-xl text-slate-500 font-medium">
-                            {t('form.subtitle', 'Get 3 months free when you register your number today.')}
-                        </p>
+        <section className="py-24 px-4 bg-slate-50 border-b border-slate-100">
+            <div className="max-w-2xl mx-auto">
+                <div className="bg-white border border-slate-200 p-8 md:p-12">
+
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl font-extrabold mb-4">
+                            {t('form.title', 'Protect Your Farm')}
+                        </h2>
+                        {!success && (
+                            <p className="text-lg text-slate-500">
+                                {t('form.subtitle', 'Get 3 months free')}
+                            </p>
+                        )}
                     </div>
 
                     {!success ? (
-                        <form onSubmit={handleSubmit} className="space-y-8 relative z-10" aria-live="polite">
-                            <div className="space-y-2">
-                                <label htmlFor="name" className="block text-sm font-bold text-dark mb-2 uppercase tracking-wide">
-                                    {t('form.name', 'Full Name')} <span className="text-rose-500">*</span>
+                        <form onSubmit={handleSubmit} className="space-y-6">
+
+                            {/* NAME */}
+                            <div>
+                                <label className="font-bold">
+                                    {t('form.name', 'Full Name')} *
                                 </label>
-                                <div className="relative">
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        name="name"
-                                        required
-                                        aria-required="true"
-                                        autoComplete="name"
-                                        placeholder={t('form.name_ph', 'e.g. Ramesh Kumar')}
-                                        className="w-full bg-white border border-slate-300 text-dark px-4 py-3 focus:outline-none focus:border-dark placeholder:text-slate-400"
-                                    />
-                                </div>
+                                <input
+                                    name="name"
+                                    required
+                                    placeholder={t('form.name_ph', 'Ramesh Kumar')}
+                                    className="w-full border px-4 py-3 mt-2"
+                                />
                             </div>
 
+                            {/* PHONE */}
                             <div>
-                                <label htmlFor="phone" className="block text-sm font-bold text-dark mb-2 uppercase tracking-wide">
-                                    {t('form.mobile', 'Mobile Number')} <span className="text-rose-500">*</span>
+                                <label className="font-bold">
+                                    {t('form.mobile', 'Mobile Number')} *
                                 </label>
-                                <div className="relative flex items-center border border-slate-300 bg-white focus-within:border-dark transition-all">
-                                    <div className="flex items-center justify-center pl-4 pr-3 border-r border-slate-200 text-dark font-bold">
-                                        +91
-                                    </div>
+                                <div className="flex border mt-2">
+                                    <span className="px-3 py-3 bg-gray-100">+91</span>
                                     <input
-                                        type="tel"
-                                        id="phone"
                                         name="phone"
                                         required
-                                        aria-required="true"
-                                        autoComplete="tel"
-                                        pattern="[0-9 ]{10,12}"
-                                        title="Please enter exactly 10 digits"
-                                        placeholder="98765 43210"
-                                        maxLength="11"
-                                        className="w-full bg-transparent text-dark px-4 py-3 focus:outline-none placeholder:text-slate-400"
+                                        placeholder="9876543210"
+                                        className="w-full px-4 py-3 outline-none"
                                     />
                                 </div>
                             </div>
 
-                            <div className="space-y-2">
-                                <label htmlFor="languagePref" className="block text-lg font-bold text-dark ml-2">Preferred Language</label>
-                                <div className="relative">
-                                    <select
-                                        id="languagePref"
-                                        name="language"
-                                        required
-                                        aria-required="true"
-                                        autoComplete="language"
-                                        defaultValue=""
-                                        className="w-full bg-white border border-slate-300 text-dark px-4 py-3 focus:outline-none focus:border-dark appearance-none"
-                                    >
-                                        <option value="" disabled>Select a language</option>
-                                        <option value="hi">Hindi</option>
-                                        <option value="te">Telugu</option>
-                                        <option value="ta">Tamil</option>
-                                        <option value="kn">Kannada</option>
-                                        <option value="en">English</option>
-                                    </select>
-                                    <div className="pointer-events-none absolute inset-y-0 right-6 flex items-center px-2 text-slate-400" aria-hidden="true">
-                                        <svg className="fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
-                                    </div>
-                                </div>
+                            {/* LANGUAGE */}
+                            <div>
+                                <label className="font-bold">
+                                    {t('form.language', 'Preferred Language')}
+                                </label>
+                                <select
+                                    name="language"
+                                    required
+                                    defaultValue=""
+                                    className="w-full border px-4 py-3 mt-2"
+                                >
+                                    <option value="" disabled>
+                                        {t('form.select_language', 'Select a language')}
+                                    </option>
+                                    <option value="hi-IN">Hindi</option>
+                                    <option value="te-IN">Telugu</option>
+                                    <option value="ta-IN">Tamil</option>
+                                    <option value="kn-IN">Kannada</option>
+                                    <option value="en-IN">English</option>
+                                </select>
                             </div>
 
+                            {/* BUTTON */}
                             <button
                                 type="submit"
                                 disabled={loading}
-                                aria-disabled={loading}
-                                className="w-full bg-dark text-white text-lg py-4 mt-8 font-bold disabled:opacity-70 hover:bg-slate-800 transition-colors"
+                                className="w-full bg-black text-white py-4 font-bold"
                             >
-                                {loading ? t('form.btn_loading', 'Registering...') : t('form.btn', 'Get Started Now')}
+                                {loading
+                                    ? t('form.btn_loading', 'Registering...')
+                                    : t('form.btn', 'Get Started')}
                             </button>
+
                         </form>
                     ) : (
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ type: "spring" }}
-                            className="text-center py-12 relative z-10"
-                            aria-live="polite"
-                        >
-                            <motion.div
-                                animate={{ scale: [1, 1.1, 1] }}
-                                transition={{ duration: 2, repeat: Infinity }}
-                                className="inline-flex items-center justify-center w-28 h-28 bg-brand-light rounded-full mb-8 text-brand shadow-[0_0_40px_rgba(37,211,102,0.3)]"
-                            >
-                                <CheckCircle2 size={56} strokeWidth={2.5} aria-hidden="true" />
-                            </motion.div>
-                            <h3 className="text-4xl font-extrabold text-dark mb-4 tracking-tight">{t('form.success', 'Registration Successful!')}</h3>
-                            <p className="text-xl text-slate-500 font-medium mb-12">
-                                {t('form.success_desc', "We'll contact you to finish setup.")}
-                            </p>
-                            <button
-                                onClick={() => setSuccess(false)}
-                                className="text-brand font-bold text-lg hover:underline underline-offset-4 focus:outline-none"
-                            >
-                                {t('form.success_btn', 'Register another number')}
-                            </button>
+                        <motion.div className="text-center py-10 flex flex-col items-center justify-center">
+                            <CheckCircle2 size={60} className="text-brand" />
+                            <h3 className="text-2xl font-bold mt-4">
+                                {t('form.success', 'Registration Successful')}
+                            </h3>
                         </motion.div>
                     )}
+
                 </div>
             </div>
         </section>
