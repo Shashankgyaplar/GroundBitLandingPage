@@ -7,12 +7,12 @@ export default function Testimonials() {
         {
             name: "Ramesh Kumar",
             crop: "Tomato Farmer, Karnataka",
-            text: "I used to lose half my crop because I couldn't see the pests in time. Now, the machine calls me and WhatsApps me when danger comes. I saved my tomatoes this season."
+            text: "The machine calls me when danger arrives. I saved my tomatoes this season."
         },
         {
             name: "Suresh Patil",
             crop: "Cotton Farmer, Maharashtra",
-            text: "I just give a missed call and it tells me what to spray in Marathi. I don't need any application on my old phone. My entire village is safer now."
+            text: "I give a missed call and it tells me what to spray. My whole village is safer."
         }
     ];
 

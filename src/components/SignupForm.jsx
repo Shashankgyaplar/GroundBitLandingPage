@@ -92,7 +92,6 @@ export default function SignupForm() {
                                     >
                                         <option value="" disabled>Select a language</option>
                                         <option value="hi">Hindi (हिंदी)</option>
-                                        <option value="mr">Marathi (मराठी)</option>
                                         <option value="te">Telugu (తెలుగు)</option>
                                         <option value="ta">Tamil (தமிழ்)</option>
                                         <option value="kn">Kannada (ಕನ್ನಡ)</option>

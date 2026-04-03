@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 
 export default function SolutionSection() {
     const steps = [
-        { num: 1, title: "Device monitors field & listens for pests", desc: "Our low-cost IoT device sits in your field 24/7, tracking soil and weather conditions.", color: "bg-emerald-500", shadow: "shadow-emerald-500/30" },
-        { num: 2, title: "You send a voice note or give a missed call", desc: "Spot an issue? Just open WhatsApp and send a voice note, or dial our missed call number.", color: "bg-brand", shadow: "shadow-brand/30" },
-        { num: 3, title: "AI responds in your language in <10 seconds", desc: "Our agriculture AI processes your query and answers you back in Hindi, Telugu, Tamil, or Kannada.", color: "bg-blue-500", shadow: "shadow-blue-500/30" },
-        { num: 4, title: "Nearby farmers get alerts if risk is detected", desc: "If a critical pest is identified, an automated voice alert is sent to all farmers in a 5km radius to protect their crops.", color: "bg-dark", shadow: "shadow-dark/30" }
+        { num: 1, title: "24/7 Field Monitoring", desc: "IoT device tracks soil and weather.", color: "bg-emerald-500", shadow: "shadow-emerald-500/30" },
+        { num: 2, title: "Simple Voice Interaction", desc: "Use WhatsApp voice notes or missed calls.", color: "bg-brand", shadow: "shadow-brand/30" },
+        { num: 3, title: "Instant AI Reply", desc: "Answers back in <10s in your language.", color: "bg-blue-500", shadow: "shadow-blue-500/30" },
+        { num: 4, title: "Community Risk Alerts", desc: "Voice alerts sent to nearby farmers.", color: "bg-dark", shadow: "shadow-dark/30" }
     ];
 
     return (

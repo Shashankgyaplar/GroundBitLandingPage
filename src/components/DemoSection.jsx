@@ -13,7 +13,7 @@ export default function DemoSection() {
                     className="text-center mb-20"
                 >
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight">See It In Action</h2>
-                    <p className="text-xl text-slate-400 max-w-2xl mx-auto font-medium">Built around the tools farmers already use every single day.</p>
+                    <p className="text-xl text-slate-400 max-w-2xl mx-auto font-medium">Uses tools farmers already have.</p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
@@ -42,9 +42,9 @@ export default function DemoSection() {
                                 className="bg-[#075E54] text-white p-5 rounded-3xl rounded-tr-sm ml-auto w-4/5 shadow-lg border border-white/5"
                             >
                                 <p className="text-xs text-emerald-200 font-bold mb-2 uppercase tracking-wider flex items-center gap-2">
-                                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Voice Note (0:12)
+                                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Voice Note (0:04)
                                 </p>
-                                <p className="text-lg leading-relaxed font-medium">"My cotton leaves have white spots, what should I do?"</p>
+                                <p className="text-lg leading-relaxed font-medium">"Cotton leaves have white spots. Help?"</p>
                             </motion.div>
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.9, originX: 0 }}
@@ -54,7 +54,7 @@ export default function DemoSection() {
                                 className="bg-[#25D366] text-[#075E54] p-5 rounded-3xl rounded-tl-sm mr-auto w-4/5 shadow-lg shadow-emerald-900/50 border border-white/20"
                             >
                                 <p className="text-xs text-teal-900 font-bold mb-2 uppercase tracking-wider">AI Voice Response</p>
-                                <p className="text-lg leading-relaxed font-bold">Hello! The white spots are likely Whitefly damage. GroundBit sensor 3 km away also heard them. Spray neem oil...</p>
+                                <p className="text-lg leading-relaxed font-bold">White spots indicate Whitefly. Spray neem oil.</p>
                             </motion.div>
                         </div>
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#25D366]/10 rounded-full blur-[100px] pointer-events-none"></div>
@@ -88,7 +88,7 @@ export default function DemoSection() {
                                 </div>
                             </motion.div>
                             <p className="text-center text-slate-300 text-xl font-medium mt-8">
-                                Farmer gives Missed Call to
+                                Missed Call to
                             </p>
                             <div className="font-mono text-white text-4xl font-extrabold mt-3 tracking-widest bg-slate-800 px-6 py-3 rounded-2xl border border-slate-700 shadow-inner">
                                 1800-XXX
@@ -99,7 +99,7 @@ export default function DemoSection() {
                                 className="w-[2px] bg-gradient-to-b from-blue-500 to-emerald-400 my-6"
                             ></motion.div>
                             <p className="text-center text-emerald-400 font-bold text-lg px-4 bg-emerald-950/40 py-3 rounded-xl border border-emerald-900/50">
-                                System calls back instantly with voice advice in local language.
+                                Instant voice call back with local advice.
                             </p>
                         </div>
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none"></div>

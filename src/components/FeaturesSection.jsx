@@ -4,13 +4,13 @@ import { Smartphone, Mic, Globe2, Radio, CloudRain, BellRing, Zap } from 'lucide
 
 export default function FeaturesSection() {
     const features = [
-        { icon: <Smartphone strokeWidth={2.5} />, title: "Works on Any Phone", desc: "Even basic keypad phones can use our missed call network." },
-        { icon: <Mic strokeWidth={2.5} />, title: "Voice-Based", desc: "No need to read or type. Speak normally just like you talk." },
-        { icon: <Globe2 strokeWidth={2.5} />, title: "Multilingual", desc: "We support Hindi, Kannada, Tamil, Telugu, and more." },
-        { icon: <Radio strokeWidth={2.5} />, title: "Sound Pest Detection", desc: "Audio sensors identify pests by their unique sound." },
-        { icon: <CloudRain strokeWidth={2.5} />, title: "Field Monitoring", desc: "Solar-powered tracking of soil moisture & temp." },
-        { icon: <BellRing strokeWidth={2.5} />, title: "Community Alerts", desc: "Automatic warning systems to protect neighbor farms." },
-        { icon: <Zap strokeWidth={2.5} />, title: "Ultra-Fast Responses", desc: "Get actionable advice sent to your phone in under 10 seconds." },
+        { icon: <Smartphone strokeWidth={2.5} />, title: "Works on Any Phone", desc: "Basic keypad phones supported." },
+        { icon: <Mic strokeWidth={2.5} />, title: "Voice-Based", desc: "Speak normally. No typing needed." },
+        { icon: <Globe2 strokeWidth={2.5} />, title: "Multilingual", desc: "Hindi, Kannada, Tamil, Telugu." },
+        { icon: <Radio strokeWidth={2.5} />, title: "Sound Pest Detection", desc: "Sensors identify pests by sound." },
+        { icon: <CloudRain strokeWidth={2.5} />, title: "Field Monitoring", desc: "Solar-powered soil & temp tracking." },
+        { icon: <BellRing strokeWidth={2.5} />, title: "Community Alerts", desc: "Automatic warnings for neighbor farms." },
+        { icon: <Zap strokeWidth={2.5} />, title: "Ultra-Fast Responses", desc: "Actionable advice in under 10s." },
     ];
 
     return (

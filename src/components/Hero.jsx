@@ -35,7 +35,7 @@ export default function Hero() {
                 </motion.h1>
 
                 <motion.p variants={itemVariants} className="text-lg md:text-2xl text-slate-500 font-medium mb-10 max-w-3xl mx-auto leading-relaxed">
-                    Get voice-based crop advice in your language in under 10 seconds. No app, no reading required.
+                    Instant voice-based crop advice in your language. No app required.
                 </motion.p>
 
                 <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
@@ -47,7 +47,7 @@ export default function Hero() {
                     >
                         <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                         <Phone size={22} className="group-hover:rotate-12 transition-transform relative z-10" />
-                        <span className="relative z-10">Start with Your Phone Number</span>
+                        <span className="relative z-10">Start Free Now</span>
                     </motion.a>
                 </motion.div>
 

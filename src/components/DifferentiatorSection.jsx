@@ -4,10 +4,10 @@ import { Cpu, Users, MessageSquare, AlertTriangle } from 'lucide-react';
 
 export default function DifferentiatorSection() {
     const steps = [
-        { icon: <Cpu size={36} className="text-emerald-500" />, title: "1. Watches 24/7", desc: "An ESP32 device sits in your field, constantly monitoring.", bgColor: "bg-emerald-50" },
-        { icon: <MessageSquare size={36} className="text-blue-500" />, title: "2. Ask Questions", desc: "Use WhatsApp or give a missed call to report issues.", bgColor: "bg-blue-50" },
-        { icon: <AlertTriangle size={36} className="text-amber-500" />, title: "3. AI Detects", desc: "AI listens to field audio & spots pests instantly.", bgColor: "bg-amber-50" },
-        { icon: <Users size={36} className="text-brand" />, title: "4. Community Alert", desc: "One detection alerts and protects 50 nearby farmers.", bgColor: "bg-brand-light/50" }
+        { icon: <Cpu size={36} className="text-emerald-500" />, title: "1. Watches 24/7", desc: "ESP32 monitors field continuously.", bgColor: "bg-emerald-50" },
+        { icon: <MessageSquare size={36} className="text-blue-500" />, title: "2. Ask Questions", desc: "Report issues via WhatsApp or missed call.", bgColor: "bg-blue-50" },
+        { icon: <AlertTriangle size={36} className="text-amber-500" />, title: "3. AI Detects", desc: "Spots pests via audio instantly.", bgColor: "bg-amber-50" },
+        { icon: <Users size={36} className="text-brand" />, title: "4. Community Alert", desc: "1 detection protects 50 farms.", bgColor: "bg-brand-light/50" }
     ];
 
     return (
@@ -21,7 +21,7 @@ export default function DifferentiatorSection() {
                 >
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark mb-6 tracking-tight">How The Community Works</h2>
                     <p className="text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-medium">
-                        A simple, affordable system that turns one farmer's device into protection for the whole <span className="text-brand">village</span>.
+                        Turns one device into protection for the whole <span className="text-brand">village</span>.
                     </p>
                 </motion.div>
 
@@ -58,9 +58,9 @@ export default function DifferentiatorSection() {
                         <div className="flex-1">
                             <h3 className="text-3xl md:text-5xl font-extrabold mb-6 text-white tracking-tight">The <span className="text-brand">GroundBit</span> Advantage</h3>
                             <p className="text-xl text-slate-300 max-w-2xl leading-relaxed font-medium">
-                                ESP32 watches your field 24/7. WhatsApp farmers ask questions. Feature phone farmers dial a missed call.
+                                Cross-platform voice reporting paired with AI sensors.
                                 <span className="block mt-4 text-white font-bold bg-white/10 px-4 py-2 rounded-xl inline-block border border-white/20 shadow-xl">
-                                    One disease detection protects 50 nearby farmers.
+                                    1 detection protects 50 farms.
                                 </span>
                             </p>
                         </div>

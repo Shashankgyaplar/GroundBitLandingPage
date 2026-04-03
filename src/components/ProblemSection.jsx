@@ -27,9 +27,9 @@ export default function ProblemSection() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {[
-                        { icon: <Bug size={40} className="text-red-500" />, title: "Silent Crop Diseases", desc: "Pests and diseases spread quickly before they are even visible.", bg: "bg-red-50", ring: "ring-red-100" },
-                        { icon: <MapPinOff size={40} className="text-slate-500" />, title: "No Near Experts", desc: "Agri-experts are far away, and their visits are too expensive.", bg: "bg-slate-50", ring: "ring-slate-100" },
-                        { icon: <CloudLightning size={40} className="text-amber-500" />, title: "Sudden Weather Shifts", desc: "Unpredictable weather destroys months of hard work instantly.", bg: "bg-amber-50", ring: "ring-amber-100" }
+                        { icon: <Bug size={40} className="text-red-500" />, title: "Silent Crop Diseases", desc: "Pests spread before they're visible.", bg: "bg-red-50", ring: "ring-red-100" },
+                        { icon: <MapPinOff size={40} className="text-slate-500" />, title: "No Near Experts", desc: "Costly and distant agri-experts.", bg: "bg-slate-50", ring: "ring-slate-100" },
+                        { icon: <CloudLightning size={40} className="text-amber-500" />, title: "Sudden Weather Shifts", desc: "Unpredictable weather destroys crops.", bg: "bg-amber-50", ring: "ring-amber-100" }
                     ].map((item, i) => (
                         <motion.div
                             key={i}
