@@ -101,10 +101,10 @@ export default function SignupForm() {
                                         className="w-full bg-white border border-slate-300 text-dark px-4 py-3 focus:outline-none focus:border-dark appearance-none"
                                     >
                                         <option value="" disabled>Select a language</option>
-                                        <option value="hi">Hindi (हिंदी)</option>
-                                        <option value="te">Telugu (తెలుగు)</option>
-                                        <option value="ta">Tamil (தமிழ்)</option>
-                                        <option value="kn">Kannada (ಕನ್ನಡ)</option>
+                                        <option value="hi">Hindi</option>
+                                        <option value="te">Telugu</option>
+                                        <option value="ta">Tamil</option>
+                                        <option value="kn">Kannada</option>
                                         <option value="en">English</option>
                                     </select>
                                     <div className="pointer-events-none absolute inset-y-0 right-6 flex items-center px-2 text-slate-400" aria-hidden="true">

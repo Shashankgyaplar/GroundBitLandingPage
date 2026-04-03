@@ -16,10 +16,10 @@ export default function Navbar() {
 
     const languages = [
         { code: 'en', label: 'English' },
-        { code: 'hi', label: 'हिन्दी' },
-        { code: 'te', label: 'తెలుగు' },
-        { code: 'ta', label: 'தமிழ்' },
-        { code: 'kn', label: 'ಕನ್ನಡ' }
+        { code: 'hi', label: 'Hindi' },
+        { code: 'te', label: 'Telugu' },
+        { code: 'ta', label: 'Tamil' },
+        { code: 'kn', label: 'Kannada' }
     ];
 
     return (
