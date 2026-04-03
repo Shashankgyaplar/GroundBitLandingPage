@@ -4,7 +4,7 @@ import { Phone, MessageCircle } from 'lucide-react';
 
 export default function DemoSection() {
     return (
-        <section className="py-32 px-4 bg-dark text-white overflow-hidden relative">
+        <section className="py-24 px-4 bg-slate-50 border-b border-slate-100">
             <div className="max-w-6xl mx-auto relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -12,52 +12,46 @@ export default function DemoSection() {
                     viewport={{ once: true }}
                     className="text-center mb-20"
                 >
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight">See It In Action</h2>
-                    <p className="text-xl text-slate-400 max-w-2xl mx-auto font-medium">Uses tools farmers already have.</p>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-dark">See It In Action</h2>
+                    <p className="text-xl text-slate-500 max-w-2xl mx-auto font-medium">Uses tools farmers already have.</p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
                     {/* WhatsApp */}
                     <motion.div
-                        initial={{ opacity: 0, x: -40 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        whileHover={{ y: -10 }}
-                        transition={{ type: "spring", stiffness: 60 }}
-                        className="bg-slate-800/80 backdrop-blur-xl p-10 rounded-[3rem] border border-slate-700/50 relative overflow-hidden flex flex-col hover:shadow-[0_20px_50px_rgba(37,211,102,0.15)] transition-all duration-300"
+                        className="bg-white p-8 border border-slate-200 flex flex-col"
                     >
                         <div className="flex items-center gap-4 mb-12 relative z-10">
-                            <div className="bg-[#25D366]/20 p-4 rounded-2xl">
-                                <MessageCircle size={36} className="text-[#25D366]" fill="#25D366" />
+                            <div className="bg-emerald-50 p-3 rounded-lg">
+                                <MessageCircle size={32} className="text-emerald-600" />
                             </div>
-                            <h3 className="text-3xl font-extrabold tracking-tight">WhatsApp Flow</h3>
+                            <h3 className="text-2xl font-bold text-dark tracking-tight">WhatsApp Flow</h3>
                         </div>
 
                         <div className="space-y-6 relative z-10 flex-1">
                             <motion.div
-                                initial={{ opacity: 0, scale: 0.9, originX: 1 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.3 }}
-                                className="bg-[#075E54] text-white p-5 rounded-3xl rounded-tr-sm ml-auto w-4/5 shadow-lg border border-white/5"
+                                className="bg-emerald-50 text-dark p-4 rounded-lg ml-auto w-4/5 border border-emerald-100"
                             >
-                                <p className="text-xs text-emerald-200 font-bold mb-2 uppercase tracking-wider flex items-center gap-2">
+                                <p className="text-xs text-slate-500 font-bold mb-1 uppercase tracking-wider flex items-center gap-2">
                                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Voice Note (0:04)
                                 </p>
                                 <p className="text-lg leading-relaxed font-medium">"Cotton leaves have white spots. Help?"</p>
                             </motion.div>
                             <motion.div
-                                initial={{ opacity: 0, scale: 0.9, originX: 0 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.8 }}
-                                className="bg-[#25D366] text-[#075E54] p-5 rounded-3xl rounded-tl-sm mr-auto w-4/5 shadow-lg shadow-emerald-900/50 border border-white/20"
+                                className="bg-slate-100 text-dark p-4 rounded-lg mr-auto w-4/5 border border-slate-200"
                             >
-                                <p className="text-xs text-teal-900 font-bold mb-2 uppercase tracking-wider">AI Voice Response</p>
-                                <p className="text-lg leading-relaxed font-bold">White spots indicate Whitefly. Spray neem oil.</p>
+                                <p className="text-xs text-slate-500 font-bold mb-1 uppercase tracking-wider">AI Voice Response</p>
+                                <p className="text-base leading-relaxed font-bold">White spots indicate Whitefly. Spray neem oil.</p>
                             </motion.div>
                         </div>
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#25D366]/10 rounded-full blur-[100px] pointer-events-none"></div>
                     </motion.div>
 
                     {/* Missed call */}
@@ -65,48 +59,35 @@ export default function DemoSection() {
                         initial={{ opacity: 0, x: 40 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        whileHover={{ y: -10 }}
-                        transition={{ type: "spring", stiffness: 60 }}
-                        className="bg-slate-800/80 backdrop-blur-xl p-10 rounded-[3rem] border border-slate-700/50 relative overflow-hidden flex flex-col hover:shadow-[0_20px_50px_rgba(59,130,246,0.15)] transition-all duration-300"
+                        className="bg-white p-8 border border-slate-200 flex flex-col"
                     >
                         <div className="flex items-center gap-4 mb-12 relative z-10">
-                            <div className="bg-blue-500/20 p-4 rounded-2xl">
-                                <Phone size={36} className="text-blue-400" fill="currentColor" />
+                            <div className="bg-blue-50 p-3 rounded-lg">
+                                <Phone size={32} className="text-blue-600" />
                             </div>
-                            <h3 className="text-3xl font-extrabold tracking-tight">Keypad Phone</h3>
+                            <h3 className="text-2xl font-bold text-dark tracking-tight">Keypad Phone</h3>
                         </div>
 
-                        <div className="flex flex-col items-center justify-center flex-1 bg-slate-900/80 rounded-[2rem] border border-slate-700 relative z-10 py-12 px-6">
-                            <motion.div
-                                animate={{ y: [0, -10, 0] }}
-                                transition={{ repeat: Infinity, duration: 2 }}
-                                className="relative"
-                            >
-                                <div className="absolute inset-0 bg-blue-500 rounded-full blur-2xl animate-pulse opacity-30"></div>
-                                <div className="bg-blue-500/20 p-6 rounded-full relative z-10 border border-blue-500/30">
-                                    <Phone size={48} className="text-blue-400 drop-shadow-md" />
+                        <div className="flex flex-col items-center justify-center flex-1 py-8">
+                            <div className="relative">
+                                <div className="bg-slate-50 p-6 rounded-full border border-slate-200">
+                                    <Phone size={40} className="text-slate-400 drop-shadow-sm" />
                                 </div>
-                            </motion.div>
-                            <p className="text-center text-slate-300 text-xl font-medium mt-8">
+                            </div>
+                            <p className="text-center text-slate-500 text-lg font-medium mt-6">
                                 Missed Call to
                             </p>
-                            <div className="font-mono text-white text-4xl font-extrabold mt-3 tracking-widest bg-slate-800 px-6 py-3 rounded-2xl border border-slate-700 shadow-inner">
+                            <div className="font-mono text-dark text-3xl font-bold mt-2 tracking-widest bg-slate-100 px-6 py-2 rounded-lg border border-slate-200">
                                 1800-XXX
                             </div>
-                            <motion.div
-                                initial={{ height: 0 }}
-                                whileInView={{ height: "40px" }}
-                                className="w-[2px] bg-gradient-to-b from-blue-500 to-emerald-400 my-6"
-                            ></motion.div>
-                            <p className="text-center text-emerald-400 font-bold text-lg px-4 bg-emerald-950/40 py-3 rounded-xl border border-emerald-900/50">
+                            <div className="w-[1px] h-10 bg-slate-200 my-4"></div>
+                            <p className="text-center text-emerald-600 font-medium text-base px-4 py-2 border border-emerald-100 bg-emerald-50 rounded-lg">
                                 Instant voice call back with local advice.
                             </p>
                         </div>
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none"></div>
                     </motion.div>
                 </div>
             </div>
-            <div className="absolute top-0 left-[20%] w-[60%] h-full bg-brand/5 blur-[120px] -z-0 rounded-full pointer-events-none"></div>
-        </section>
+        </section >
     );
 }

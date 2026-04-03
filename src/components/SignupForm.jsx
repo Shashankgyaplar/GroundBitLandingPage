@@ -30,13 +30,10 @@ export default function SignupForm() {
     };
 
     return (
-        <section className="py-32 px-4 bg-emerald-50/50 relative overflow-hidden" aria-labelledby="form-heading">
-            <div className="max-w-3xl mx-auto relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="bg-white rounded-[3rem] shadow-[0_30px_60px_-15px_rgba(37,211,102,0.15)] p-10 md:p-16 border border-emerald-100 relative overflow-hidden"
+        <section className="py-24 px-4 bg-slate-50 border-b border-slate-100" aria-labelledby="form-heading">
+            <div className="max-w-2xl mx-auto relative z-10">
+                <div
+                    className="bg-white border border-slate-200 p-8 md:p-12 text-left"
                 >
                     <div className="text-center mb-12 relative z-10">
                         <h2 id="form-heading" className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark mb-4 tracking-tight">Protect Your Farm</h2>
@@ -55,7 +52,7 @@ export default function SignupForm() {
                                     aria-required="true"
                                     autoComplete="name"
                                     placeholder="e.g. Ramesh Kumar"
-                                    className="w-full bg-slate-50 border border-slate-200 text-dark text-xl px-6 py-5 rounded-2xl focus:outline-none focus:ring-4 focus:ring-brand/20 focus:border-brand transition-all shadow-sm placeholder:text-slate-400 font-medium"
+                                    className="w-full bg-white border border-slate-300 text-dark px-4 py-3 focus:outline-none focus:border-dark placeholder:text-slate-400"
                                 />
                             </div>
 
@@ -73,7 +70,7 @@ export default function SignupForm() {
                                         pattern="[0-9]{10}"
                                         title="Please enter exactly 10 digits"
                                         placeholder="98765 43210"
-                                        className="w-full bg-slate-50 border border-slate-200 text-dark text-xl pl-16 pr-6 py-5 rounded-2xl focus:outline-none focus:ring-4 focus:ring-brand/20 focus:border-brand transition-all shadow-sm tracking-widest font-medium placeholder:text-slate-300"
+                                        className="w-full bg-white border border-slate-300 text-dark px-4 py-3 pl-14 focus:outline-none focus:border-dark placeholder:text-slate-400"
                                     />
                                 </div>
                             </div>
@@ -88,7 +85,7 @@ export default function SignupForm() {
                                         aria-required="true"
                                         autoComplete="language"
                                         defaultValue=""
-                                        className="w-full bg-slate-50 border border-slate-200 text-dark text-xl px-6 py-5 rounded-2xl focus:outline-none focus:ring-4 focus:ring-brand/20 focus:border-brand transition-all shadow-sm font-medium appearance-none"
+                                        className="w-full bg-white border border-slate-300 text-dark px-4 py-3 focus:outline-none focus:border-dark appearance-none"
                                     >
                                         <option value="" disabled>Select a language</option>
                                         <option value="hi">Hindi (हिंदी)</option>
@@ -103,17 +100,14 @@ export default function SignupForm() {
                                 </div>
                             </div>
 
-                            <motion.button
-                                whileHover={{ scale: 1.02, y: -2 }}
-                                whileTap={{ scale: 0.98 }}
+                            <button
                                 type="submit"
                                 disabled={loading}
                                 aria-disabled={loading}
-                                className="w-full btn-primary text-2xl py-5 mt-4 flex items-center justify-center gap-3 disabled:opacity-70 shadow-[0_15px_35px_rgba(37,211,102,0.25)] hover:shadow-[0_20px_40px_rgba(37,211,102,0.4)] font-extrabold"
+                                className="w-full bg-dark text-white text-lg py-4 mt-8 font-bold disabled:opacity-70 hover:bg-slate-800 transition-colors"
                             >
-                                {loading ? <Loader2 className="animate-spin" size={28} aria-hidden="true" /> : null}
                                 {loading ? "Registering..." : "Get Started Now"}
-                            </motion.button>
+                            </button>
                         </form>
                     ) : (
                         <motion.div
@@ -142,12 +136,8 @@ export default function SignupForm() {
                             </button>
                         </motion.div>
                     )}
-
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-brand-light/60 rounded-full blur-[80px] pointer-events-none" aria-hidden="true"></div>
-                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-100/60 rounded-full blur-[80px] pointer-events-none" aria-hidden="true"></div>
-                </motion.div>
+                </div>
             </div>
-            <div className="absolute inset-0 bg-grid-pattern opacity-40 mix-blend-multiply pointer-events-none -z-20" aria-hidden="true"></div>
         </section>
     );
 }

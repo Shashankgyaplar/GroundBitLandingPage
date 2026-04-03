@@ -13,7 +13,7 @@ export default function ProblemSection() {
     };
 
     return (
-        <section className="py-28 px-4 bg-[#fbfbfb] border-t border-slate-100">
+        <section className="py-24 px-4 bg-white border-b border-slate-100">
             <motion.div
                 initial="hidden"
                 whileInView="visible"
@@ -35,9 +35,9 @@ export default function ProblemSection() {
                             key={i}
                             variants={itemVariants}
                             whileHover={{ y: -10, scale: 1.02 }}
-                            className="glass-card bg-white p-10 flex flex-col items-center text-center shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100"
+                            className="bg-white p-8 flex flex-col items-center text-center transition-all duration-300"
                         >
-                            <div className={`${item.bg} p-6 rounded-full mb-8 ring-8 ${item.ring}`}>
+                            <div className="mb-6">
                                 {item.icon}
                             </div>
                             <h3 className="font-extrabold text-2xl mb-4 text-dark">{item.title}</h3>

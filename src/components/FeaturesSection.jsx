@@ -14,7 +14,7 @@ export default function FeaturesSection() {
     ];
 
     return (
-        <section className="py-32 px-4 bg-brand-light/20 relative">
+        <section className="py-24 px-4 bg-white border-b border-slate-100">
             <div className="max-w-6xl mx-auto relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -33,21 +33,19 @@ export default function FeaturesSection() {
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ delay: i * 0.1, type: "spring" }}
                             whileHover={{ y: -5 }}
-                            className="bg-white p-8 rounded-[2rem] shadow-sm border border-brand/5 hover:shadow-xl hover:border-brand/20 transition-all group overflow-hidden relative cursor-default"
+                            className="flex flex-col items-start gap-4 p-4 border-b border-slate-100"
                         >
-                            <div className="w-16 h-16 bg-emerald-50 rounded-[1.5rem] flex items-center justify-center text-emerald-600 mb-6 group-hover:bg-brand group-hover:text-white transition-colors duration-300">
-                                {React.cloneElement(f.icon, { size: 30 })}
+                            <div className="text-dark">
+                                {React.cloneElement(f.icon, { size: 28 })}
                             </div>
-                            <h3 className="font-extrabold text-xl text-dark mb-3 leading-snug">{f.title}</h3>
-                            <p className="text-slate-500 font-medium text-sm leading-relaxed">{f.desc}</p>
-
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-brand/5 to-transparent rounded-bl-[100px] -z-10 group-hover:scale-110 transition-transform"></div>
+                            <div>
+                                <h3 className="font-bold text-lg text-dark mb-1">{f.title}</h3>
+                                <p className="text-slate-500 font-medium text-sm">{f.desc}</p>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
             </div>
-            {/* Background decoration */}
-            <div className="absolute inset-0 bg-grid-pattern opacity-40 mix-blend-multiply pointer-events-none -z-20"></div>
         </section>
     );
 }

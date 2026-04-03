@@ -17,7 +17,7 @@ export default function Testimonials() {
     ];
 
     return (
-        <section className="py-32 px-4 bg-[#fbfbfb] relative border-t border-slate-100">
+        <section className="py-24 px-4 bg-white relative border-b border-slate-100">
             <div className="max-w-5xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -30,29 +30,20 @@ export default function Testimonials() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 relative z-10">
                     {testimonials.map((t, i) => (
-                        <motion.div
+                        <div
                             key={i}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.2, type: "spring", stiffness: 80 }}
-                            whileHover={{ y: -5 }}
-                            className="glass-card bg-white p-10 md:p-12 rounded-[2.5rem] relative shadow-md hover:shadow-xl transition-all duration-300 border-white/80"
+                            className="bg-white p-8 border border-slate-200"
                         >
-                            <Quote className="text-brand/10 absolute top-8 left-8 w-20 h-20 -rotate-12" />
-                            <p className="text-xl text-slate-600 font-medium italic relative z-10 mb-10 mt-6 leading-relaxed">
+                            <p className="text-lg text-slate-700 italic mb-8">
                                 "{t.text}"
                             </p>
-                            <div className="flex items-center gap-5">
-                                <div className="w-16 h-16 bg-gradient-to-br from-brand to-emerald-600 rounded-full flex items-center justify-center text-white font-extrabold text-2xl shadow-lg shadow-brand/30">
-                                    {t.name[0]}
-                                </div>
+                            <div className="flex items-center gap-4">
                                 <div>
-                                    <h4 className="font-bold text-xl text-dark tracking-tight">{t.name}</h4>
-                                    <p className="text-sm font-medium text-slate-500">{t.crop}</p>
+                                    <h4 className="font-bold text-dark">{t.name}</h4>
+                                    <p className="text-sm text-slate-500">{t.crop}</p>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>
