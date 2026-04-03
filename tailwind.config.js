@@ -15,7 +15,7 @@ export default {
         dark: '#0f172a',
       },
       fontFamily: {
-        sans: ['Inter', 'Noto Sans', 'sans-serif'],
+        sans: ['Inter', 'Noto Sans Devanagari', 'Noto Sans Kannada', 'Noto Sans Telugu', 'Noto Sans Tamil', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       }
     },
   },
