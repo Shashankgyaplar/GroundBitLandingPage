@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Bug, MapPinOff, CloudLightning } from 'lucide-react';
+import { Bug, Clock, CloudRain } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function ProblemSection() {
+    const { t } = useTranslation();
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
@@ -11,6 +13,12 @@ export default function ProblemSection() {
         hidden: { opacity: 0, y: 30 },
         visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
     };
+
+    const problems = [
+        { icon: <Bug size={32} className="text-rose-500" />, title: t('problem.c1', 'Pests destroy crops.') },
+        { icon: <Clock size={32} className="text-amber-500" />, title: t('problem.c2', 'Late advice means losses.') },
+        { icon: <CloudRain size={32} className="text-blue-500" />, title: t('problem.c3', 'Weather ruins harvest.') }
+    ];
 
     return (
         <section className="py-24 px-4 bg-white border-b border-slate-100">
@@ -22,15 +30,11 @@ export default function ProblemSection() {
                 className="max-w-5xl mx-auto text-center"
             >
                 <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark mb-16 tracking-tight">
-                    The Challenge Small Farmers Face
+                    {t('problem.title', 'The Challenge Small Farmers Face')}
                 </motion.h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {[
-                        { icon: <Bug size={40} className="text-red-500" />, title: "Silent Crop Diseases", desc: "Pests spread before they're visible.", bg: "bg-red-50", ring: "ring-red-100" },
-                        { icon: <MapPinOff size={40} className="text-slate-500" />, title: "No Near Experts", desc: "Costly and distant agri-experts.", bg: "bg-slate-50", ring: "ring-slate-100" },
-                        { icon: <CloudLightning size={40} className="text-amber-500" />, title: "Sudden Weather Shifts", desc: "Unpredictable weather destroys crops.", bg: "bg-amber-50", ring: "ring-amber-100" }
-                    ].map((item, i) => (
+                    {problems.map((item, i) => (
                         <motion.div
                             key={i}
                             variants={itemVariants}
@@ -41,7 +45,6 @@ export default function ProblemSection() {
                                 {item.icon}
                             </div>
                             <h3 className="font-extrabold text-2xl mb-4 text-dark">{item.title}</h3>
-                            <p className="text-slate-500 font-medium text-lg leading-relaxed">{item.desc}</p>
                         </motion.div>
                     ))}
                 </div>

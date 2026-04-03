@@ -1,18 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function Testimonials() {
+    const { t } = useTranslation();
     const testimonials = [
         {
-            name: "Ramesh Kumar",
-            crop: "Tomato Farmer, Karnataka",
-            text: "The machine calls me when danger arrives. I saved my tomatoes this season."
+            text: t('testimonials.t1_text', "The machine calls me when danger arrives. I saved my tomatoes this season."),
+            name: t('testimonials.t1_name', "Ramesh Kumar"),
+            crop: t('testimonials.t1_crop', "Tomato Farmer, Karnataka")
         },
         {
-            name: "Suresh Patil",
-            crop: "Cotton Farmer, Maharashtra",
-            text: "I give a missed call and it tells me what to spray. My whole village is safer."
+            text: t('testimonials.t2_text', "I give a missed call and it tells me what to spray. My whole village is safer."),
+            name: t('testimonials.t2_name', "Suresh Patil"),
+            crop: t('testimonials.t2_crop', "Cotton Farmer, Maharashtra")
         }
     ];
 
@@ -25,7 +27,7 @@ export default function Testimonials() {
                     viewport={{ once: true }}
                     className="text-center mb-20"
                 >
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark tracking-tight">Trusted by Farmers</h2>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark tracking-tight">{t('testimonials.title', 'Trusted by Farmers')}</h2>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 relative z-10">

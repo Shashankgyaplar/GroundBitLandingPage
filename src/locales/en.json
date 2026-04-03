@@ -1,0 +1,100 @@
+{
+  "hero": {
+    "badge": "Built for Indian Farmers 🇮🇳",
+    "title1": "Smart Farming Advice on",
+    "title2": "Any Phone",
+    "subtitle": "Voice-first alerts and guidance in your local language.",
+    "cta": "Start Free Now",
+    "f1": "No App Needed",
+    "f2": "Works on Any Phone",
+    "f3": "Voice-Based",
+    "f4": "24/7 Monitoring"
+  },
+  "nav": {
+    "brand": "GroundBit",
+    "home": "Home",
+    "how": "How it Works",
+    "features": "Features",
+    "demo": "Demo",
+    "join": "Join Now"
+  },
+  "problem": {
+    "title": "The Farming Problem",
+    "c1": "Pests destroy crops.",
+    "c2": "Late advice means losses.",
+    "c3": "Weather ruins harvest."
+  },
+  "solution": {
+    "title": "How It Works",
+    "s1_title": "24/7 Field Monitoring",
+    "s1_desc": "IoT device tracks soil and weather.",
+    "s2_title": "Simple Voice Interaction",
+    "s2_desc": "Use WhatsApp voice notes or missed calls.",
+    "s3_title": "Instant AI Reply",
+    "s3_desc": "Answers back in <10s in your language.",
+    "s4_title": "Community Risk Alerts",
+    "s4_desc": "Voice alerts sent to nearby farmers."
+  },
+  "features": {
+    "title": "Why GroundBit?",
+    "f1_title": "Cross-Platform",
+    "f1_desc": "Works on WhatsApp and dumb phones.",
+    "f2_title": "Instant Voice AI",
+    "f2_desc": "Understands regional dialects.",
+    "f3_title": "Offline Fallback",
+    "f3_desc": "SMS works without internet.",
+    "f4_title": "Community Grid",
+    "f4_desc": "One device protects multiple farms."
+  },
+  "demo": {
+    "title": "See It In Action",
+    "subtitle": "Uses tools farmers already have.",
+    "whatsapp": "WhatsApp Flow",
+    "vn": "Voice Note (0:04)",
+    "vn_text": "Cotton leaves have white spots. Help?",
+    "ai_resp": "AI Voice Response",
+    "ai_text": "White spots indicate Whitefly. Spray neem oil.",
+    "keypad": "Keypad Phone",
+    "mc": "Missed Call to",
+    "mc_desc": "Instant voice call back with local advice."
+  },
+  "diff": {
+    "title": "How The Community Works",
+    "subtitle": "Turns one device into protection for the whole village.",
+    "s1_title": "1. Watches 24/7",
+    "s1_desc": "ESP32 monitors field continuously.",
+    "s2_title": "2. Ask Questions",
+    "s2_desc": "Report issues via WhatsApp or missed call.",
+    "s3_title": "3. AI Detects",
+    "s3_desc": "Spots pests via audio instantly.",
+    "s4_title": "4. Community Alert",
+    "s4_desc": "1 detection protects 50 farms.",
+    "adv": "The GroundBit Advantage",
+    "adv_desc": "Cross-platform voice reporting paired with AI sensors.",
+    "adv_badge": "1 detection protects 50 farms.",
+    "cta": "Join the Network"
+  },
+  "testimonials": {
+    "title": "Farmer Approved",
+    "t1_text": "Saved my cotton crop from whitefly with just a voice note.",
+    "t1_name": "Ramesh K.",
+    "t1_crop": "Cotton",
+    "t2_text": "The missed call feature is perfect for my older keypad phone.",
+    "t2_name": "Suresh R.",
+    "t2_crop": "Tomato"
+  },
+  "form": {
+    "title": "Protect Your Farm",
+    "subtitle": "Get 3 months free when you register your number today.",
+    "name": "Full Name",
+    "name_ph": "e.g. Ramesh Kumar",
+    "mobile": "Mobile Number",
+    "lang": "Preferred Language",
+    "lang_sel": "Select a language",
+    "btn": "Get Started Now",
+    "btn_loading": "Registering...",
+    "success": "Registration Successful!",
+    "success_desc": "We'll contact you to finish setup.",
+    "success_btn": "Register another number"
+  }
+}

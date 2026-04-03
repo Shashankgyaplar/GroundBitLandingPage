@@ -1,13 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Cpu, Users, MessageSquare, AlertTriangle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function DifferentiatorSection() {
+    const { t } = useTranslation();
     const steps = [
-        { icon: <Cpu size={36} className="text-emerald-500" />, title: "1. Watches 24/7", desc: "ESP32 monitors field continuously.", bgColor: "bg-emerald-50" },
-        { icon: <MessageSquare size={36} className="text-blue-500" />, title: "2. Ask Questions", desc: "Report issues via WhatsApp or missed call.", bgColor: "bg-blue-50" },
-        { icon: <AlertTriangle size={36} className="text-amber-500" />, title: "3. AI Detects", desc: "Spots pests via audio instantly.", bgColor: "bg-amber-50" },
-        { icon: <Users size={36} className="text-brand" />, title: "4. Community Alert", desc: "1 detection protects 50 farms.", bgColor: "bg-brand-light/50" }
+        { icon: <Cpu size={36} className="text-emerald-500" />, title: t('diff.s1_title', "1. Watches 24/7"), desc: t('diff.s1_desc', "ESP32 monitors field continuously."), bgColor: "bg-emerald-50" },
+        { icon: <MessageSquare size={36} className="text-blue-500" />, title: t('diff.s2_title', "2. Ask Questions"), desc: t('diff.s2_desc', "Report issues via WhatsApp or missed call."), bgColor: "bg-blue-50" },
+        { icon: <AlertTriangle size={36} className="text-amber-500" />, title: t('diff.s3_title', "3. AI Detects"), desc: t('diff.s3_desc', "Spots pests via audio instantly."), bgColor: "bg-amber-50" },
+        { icon: <Users size={36} className="text-brand" />, title: t('diff.s4_title', "4. Community Alert"), desc: t('diff.s4_desc', "1 detection protects 50 farms."), bgColor: "bg-brand-light/50" }
     ];
 
     return (
@@ -19,9 +21,9 @@ export default function DifferentiatorSection() {
                     viewport={{ once: true, margin: "-100px" }}
                     className="text-center mb-24"
                 >
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark mb-6 tracking-tight">How The Community Works</h2>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark mb-6 tracking-tight">{t('diff.title', 'How The Community Works')}</h2>
                     <p className="text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-medium">
-                        Turns one device into protection for the whole <span className="text-brand">village</span>.
+                        {t('diff.subtitle', 'Turns one device into protection for the whole village.')}
                     </p>
                 </motion.div>
 
@@ -43,12 +45,12 @@ export default function DifferentiatorSection() {
 
                 <div className="mt-24 bg-white border border-slate-200 rounded-2xl p-8 md:p-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-8">
                     <div className="flex-1">
-                        <h3 className="text-2xl md:text-4xl font-bold mb-4 text-dark tracking-tight">The GroundBit Advantage</h3>
+                        <h3 className="text-2xl md:text-4xl font-bold mb-4 text-dark tracking-tight">{t('diff.adv', 'The GroundBit Advantage')}</h3>
                         <p className="text-lg text-slate-500 leading-relaxed">
-                            Cross-platform voice reporting paired with AI sensors.
+                            {t('diff.adv_desc', 'Cross-platform voice reporting paired with AI sensors.')}
                             <br />
                             <span className="font-bold text-dark mt-2 block">
-                                1 detection protects 50 farms.
+                                {t('diff.adv_badge', '1 detection protects 50 farms.')}
                             </span>
                         </p>
                     </div>
@@ -56,7 +58,7 @@ export default function DifferentiatorSection() {
                         href="#signup"
                         className="px-8 py-4 bg-dark text-white font-medium text-lg self-center self-stretch md:self-auto text-center"
                     >
-                        Join the Network
+                        {t('diff.cta', 'Join the Network')}
                     </a>
                 </div>
             </div>

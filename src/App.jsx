@@ -1,5 +1,6 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 
@@ -14,8 +15,25 @@ const SignupForm = React.lazy(() => import('./components/SignupForm'));
 const Footer = React.lazy(() => import('./components/Footer'));
 
 function App() {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    document.documentElement.lang = i18n.language;
+    const langClasses = {
+      hi: 'font-hi',
+      kn: 'font-kn',
+      te: 'font-te',
+      ta: 'font-ta',
+      en: 'font-sans'
+    };
+
+    // Replace existing font classes with the appropriate language font class
+    const fontClass = langClasses[i18n.language] || 'font-sans';
+    document.body.className = `${fontClass} bg-white text-slate-800 antialiased selection:bg-brand-light selection:text-brand-dark`;
+  }, [i18n.language]);
+
   return (
-    <div className="min-h-screen bg-[#fbfbfb] font-sans overflow-x-hidden text-slate-800">
+    <div className="min-h-screen bg-slate-50 overflow-x-hidden text-slate-800">
       <Toaster position="top-center" reverseOrder={false} />
       <Navbar />
       <main>

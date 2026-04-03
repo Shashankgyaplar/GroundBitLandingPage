@@ -16,6 +16,10 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        hi: ['"Noto Sans Devanagari"', "sans-serif"],
+        kn: ['"Noto Sans Kannada"', "sans-serif"],
+        te: ['"Noto Sans Telugu"', "sans-serif"],
+        ta: ['"Noto Sans Tamil"', "sans-serif"],
       }
     },
   },

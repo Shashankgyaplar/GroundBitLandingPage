@@ -1,24 +1,25 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 export default function SolutionSection() {
+    const { t } = useTranslation();
     const steps = [
-        { num: 1, title: "24/7 Field Monitoring", desc: "IoT device tracks soil and weather." },
-        { num: 2, title: "Simple Voice Interaction", desc: "Use WhatsApp voice notes or missed calls." },
-        { num: 3, title: "Instant AI Reply", desc: "Answers back in <10s in your language." },
-        { num: 4, title: "Community Risk Alerts", desc: "Voice alerts sent to nearby farmers." }
+        { num: 1, title: t('solution.s1_title', "24/7 Field Monitoring"), desc: t('solution.s1_desc', "IoT device tracks soil and weather.") },
+        { num: 2, title: t('solution.s2_title', "Simple Voice Interaction"), desc: t('solution.s2_desc', "Use WhatsApp voice notes or missed calls.") },
+        { num: 3, title: t('solution.s3_title', "Instant AI Reply"), desc: t('solution.s3_desc', "Answers back in <10s in your language.") },
+        { num: 4, title: t('solution.s4_title', "Community Risk Alerts"), desc: t('solution.s4_desc', "Voice alerts sent to nearby farmers.") }
     ];
 
     return (
         <section className="py-32 px-4 bg-white overflow-hidden relative">
             <div className="max-w-4xl mx-auto relative z-10">
                 <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark mb-20 text-center tracking-tight"
+                    className="text-4xl md:text-5xl font-extrabold text-center text-dark mb-20 tracking-tight"
                 >
-                    How It Works
+                    {t('solution.title', 'How It Works')}
                 </motion.h2>
 
                 <div className="space-y-12 max-w-2xl mx-auto">

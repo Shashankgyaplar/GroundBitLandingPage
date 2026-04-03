@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Loader2, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import toast from 'react-hot-toast';
 
 export default function SignupForm() {
+    const { t } = useTranslation();
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
 
@@ -36,41 +38,52 @@ export default function SignupForm() {
                     className="bg-white border border-slate-200 p-8 md:p-12 text-left"
                 >
                     <div className="text-center mb-12 relative z-10">
-                        <h2 id="form-heading" className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark mb-4 tracking-tight">Protect Your Farm</h2>
-                        <p className="text-xl text-slate-500 font-medium">Join the network. We'll contact you to configure alerts.</p>
+                        <h2 id="form-heading" className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark mb-4 tracking-tight">{t('form.title', 'Protect Your Farm')}</h2>
+                        <p className="text-xl text-slate-500 font-medium">
+                            {t('form.subtitle', 'Get 3 months free when you register your number today.')}
+                        </p>
                     </div>
 
                     {!success ? (
                         <form onSubmit={handleSubmit} className="space-y-8 relative z-10" aria-live="polite">
                             <div className="space-y-2">
-                                <label htmlFor="fullName" className="block text-lg font-bold text-dark ml-2">Full Name</label>
-                                <input
-                                    id="fullName"
-                                    name="fullName"
-                                    type="text"
-                                    required
-                                    aria-required="true"
-                                    autoComplete="name"
-                                    placeholder="e.g. Ramesh Kumar"
-                                    className="w-full bg-white border border-slate-300 text-dark px-4 py-3 focus:outline-none focus:border-dark placeholder:text-slate-400"
-                                />
-                            </div>
-
-                            <div className="space-y-2">
-                                <label htmlFor="mobileNumber" className="block text-lg font-bold text-dark ml-2">Mobile Number</label>
-                                <div className="flex relative items-center">
-                                    <span className="absolute left-6 text-slate-400 font-extrabold text-xl" aria-hidden="true">+91</span>
+                                <label htmlFor="name" className="block text-sm font-bold text-dark mb-2 uppercase tracking-wide">
+                                    {t('form.name', 'Full Name')} <span className="text-rose-500">*</span>
+                                </label>
+                                <div className="relative">
                                     <input
-                                        id="mobileNumber"
-                                        name="phone"
-                                        type="tel"
+                                        type="text"
+                                        id="name"
+                                        name="name"
                                         required
                                         aria-required="true"
-                                        autoComplete="tel-national"
-                                        pattern="[0-9]{10}"
+                                        autoComplete="name"
+                                        placeholder={t('form.name_ph', 'e.g. Ramesh Kumar')}
+                                        className="w-full bg-white border border-slate-300 text-dark px-4 py-3 focus:outline-none focus:border-dark placeholder:text-slate-400"
+                                    />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label htmlFor="phone" className="block text-sm font-bold text-dark mb-2 uppercase tracking-wide">
+                                    {t('form.mobile', 'Mobile Number')} <span className="text-rose-500">*</span>
+                                </label>
+                                <div className="relative flex items-center border border-slate-300 bg-white focus-within:border-dark transition-all">
+                                    <div className="flex items-center justify-center pl-4 pr-3 border-r border-slate-200 text-dark font-bold">
+                                        +91
+                                    </div>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        required
+                                        aria-required="true"
+                                        autoComplete="tel"
+                                        pattern="[0-9 ]{10,12}"
                                         title="Please enter exactly 10 digits"
                                         placeholder="98765 43210"
-                                        className="w-full bg-white border border-slate-300 text-dark px-4 py-3 pl-14 focus:outline-none focus:border-dark placeholder:text-slate-400"
+                                        maxLength="11"
+                                        className="w-full bg-transparent text-dark px-4 py-3 focus:outline-none placeholder:text-slate-400"
                                     />
                                 </div>
                             </div>
@@ -106,7 +119,7 @@ export default function SignupForm() {
                                 aria-disabled={loading}
                                 className="w-full bg-dark text-white text-lg py-4 mt-8 font-bold disabled:opacity-70 hover:bg-slate-800 transition-colors"
                             >
-                                {loading ? "Registering..." : "Get Started Now"}
+                                {loading ? t('form.btn_loading', 'Registering...') : t('form.btn', 'Get Started Now')}
                             </button>
                         </form>
                     ) : (
@@ -124,15 +137,15 @@ export default function SignupForm() {
                             >
                                 <CheckCircle2 size={56} strokeWidth={2.5} aria-hidden="true" />
                             </motion.div>
-                            <h3 className="text-4xl font-extrabold text-dark mb-4 tracking-tight">Registration Successful!</h3>
-                            <p className="text-xl text-slate-500 mb-10 leading-relaxed font-medium">
-                                We will contact you on WhatsApp or call you shortly.<br /> Welcome to the GroundBit community!
+                            <h3 className="text-4xl font-extrabold text-dark mb-4 tracking-tight">{t('form.success', 'Registration Successful!')}</h3>
+                            <p className="text-xl text-slate-500 font-medium mb-12">
+                                {t('form.success_desc', "We'll contact you to finish setup.")}
                             </p>
                             <button
                                 onClick={() => setSuccess(false)}
-                                className="text-brand font-extrabold text-lg hover:text-brand-dark transition-colors px-8 py-4 rounded-full hover:bg-brand-light border border-transparent hover:border-brand/20 focus:outline-none focus:ring-4 focus:ring-brand/20"
+                                className="text-brand font-bold text-lg hover:underline underline-offset-4 focus:outline-none"
                             >
-                                Register another number
+                                {t('form.success_btn', 'Register another number')}
                             </button>
                         </motion.div>
                     )}

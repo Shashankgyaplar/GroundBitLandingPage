@@ -1,16 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Smartphone, Mic, Globe2, Radio, CloudRain, BellRing, Zap } from 'lucide-react';
+import { Globe, MessageSquare, WifiOff, Network } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function FeaturesSection() {
+    const { t } = useTranslation();
     const features = [
-        { icon: <Smartphone strokeWidth={2.5} />, title: "Works on Any Phone", desc: "Basic keypad phones supported." },
-        { icon: <Mic strokeWidth={2.5} />, title: "Voice-Based", desc: "Speak normally. No typing needed." },
-        { icon: <Globe2 strokeWidth={2.5} />, title: "Multilingual", desc: "Hindi, Kannada, Tamil, Telugu." },
-        { icon: <Radio strokeWidth={2.5} />, title: "Sound Pest Detection", desc: "Sensors identify pests by sound." },
-        { icon: <CloudRain strokeWidth={2.5} />, title: "Field Monitoring", desc: "Solar-powered soil & temp tracking." },
-        { icon: <BellRing strokeWidth={2.5} />, title: "Community Alerts", desc: "Automatic warnings for neighbor farms." },
-        { icon: <Zap strokeWidth={2.5} />, title: "Ultra-Fast Responses", desc: "Actionable advice in under 10s." },
+        { icon: <Globe strokeWidth={2.5} />, title: t('features.f1_title', "Cross-Platform"), desc: t('features.f1_desc', "Works on WhatsApp and dumb phones.") },
+        { icon: <MessageSquare strokeWidth={2.5} />, title: t('features.f2_title', "Instant Voice AI"), desc: t('features.f2_desc', "Understands regional dialects.") },
+        { icon: <WifiOff strokeWidth={2.5} />, title: t('features.f3_title', "Offline Fallback"), desc: t('features.f3_desc', "SMS works without internet.") },
+        { icon: <Network strokeWidth={2.5} />, title: t('features.f4_title', "Community Grid"), desc: t('features.f4_desc', "One device protects multiple farms.") }
     ];
 
     return (
@@ -20,9 +19,9 @@ export default function FeaturesSection() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-20"
+                    className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark mb-6 tracking-tight">Built For Indian Farms</h2>
+                    <h2 className="text-4xl md:text-5xl font-extrabold text-dark tracking-tight">{t('features.title', 'Why GroundBit?')}</h2>
                 </motion.div>
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
                     {features.map((f, i) => (
