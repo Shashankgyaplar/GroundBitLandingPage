@@ -76,11 +76,7 @@ export default function SignupForm() {
                         <h2 className="text-4xl font-extrabold mb-4">
                             {t('form.title', 'Protect Your Farm')}
                         </h2>
-                        {!success && (
-                            <p className="text-lg text-slate-500">
-                                {t('form.subtitle', 'Get 3 months free')}
-                            </p>
-                        )}
+
                     </div>
 
                     {!success ? (

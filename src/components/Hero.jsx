@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, ShieldCheck, Mic, Smartphone } from 'lucide-react';
+import { Bug, MessageCircle, Mic, ShieldCheck, Smartphone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export default function Hero() {
@@ -32,12 +32,12 @@ export default function Hero() {
                 </motion.div>
 
                 <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-4 leading-tight">
-                    {t('hero.title1', 'Smart Farming Advice on')}
+                    {t('hero.title1', 'Pest Detection & Farming Alerts on')}
                     <span className="text-emerald-600 block sm:inline sm:ml-2">{t('hero.title2', 'Any Phone')}</span>
                 </motion.h1>
 
                 <motion.p variants={itemVariants} className="text-lg md:text-2xl text-slate-500 font-medium mb-10 max-w-3xl mx-auto leading-relaxed">
-                    {t('hero.subtitle', 'Voice-first alerts and guidance in your local language.')}
+                    {t('hero.subtitle', 'Get pest detection, WhatsApp alerts, and voice guidance in your local language.')}
                 </motion.p>
 
                 <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
@@ -47,17 +47,18 @@ export default function Hero() {
                         href="#signup"
                         className="btn-primary flex items-center justify-center gap-2 text-base px-8 py-3 font-medium"
                     >
-                        <Phone size={20} />
-                        <span>{t('hero.cta', 'Start Free Now')}</span>
+                        <ShieldCheck size={20} />
+                        <span>{t('hero.cta', 'Protect My Crops')}</span>
                     </motion.a>
                 </motion.div>
 
-                <motion.div variants={itemVariants} className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mt-12">
+                <motion.div variants={itemVariants} className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto mt-12">
                     {[
-                        { icon: <Smartphone size={24} />, text: t('hero.f1', 'No App Needed') },
-                        { icon: <Phone size={24} />, text: t('hero.f2', 'Works on Any Phone') },
-                        { icon: <Mic size={24} />, text: t('hero.f3', 'Voice-Based') },
+                        { icon: <Bug size={24} />, text: t('hero.f1', 'Pest Detection') },
+                        { icon: <MessageCircle size={24} />, text: t('hero.f2', 'WhatsApp Alerts') },
+                        { icon: <Mic size={24} />, text: t('hero.f3', 'Voice Guidance') },
                         { icon: <ShieldCheck size={24} />, text: t('hero.f4', '24/7 Monitoring') },
+                        { icon: <Smartphone size={24} />, text: t('hero.f5', 'No App Needed') },
                     ].map((feature, idx) => (
                         <div key={idx} className="flex flex-col items-center gap-2 p-4 text-slate-600">
                             <div className="text-emerald-600">{feature.icon}</div>

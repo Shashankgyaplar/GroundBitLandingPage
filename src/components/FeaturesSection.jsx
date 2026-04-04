@@ -1,15 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Globe, MessageSquare, WifiOff, Network } from 'lucide-react';
+import { Bug, MessageCircle, Mic, ShieldCheck, Smartphone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export default function FeaturesSection() {
     const { t } = useTranslation();
     const features = [
-        { icon: <Globe strokeWidth={2.5} />, title: t('features.f1_title', "Cross-Platform"), desc: t('features.f1_desc', "Works on WhatsApp and dumb phones.") },
-        { icon: <MessageSquare strokeWidth={2.5} />, title: t('features.f2_title', "Instant Voice AI"), desc: t('features.f2_desc', "Understands regional dialects.") },
-        { icon: <WifiOff strokeWidth={2.5} />, title: t('features.f3_title', "Offline Fallback"), desc: t('features.f3_desc', "SMS works without internet.") },
-        { icon: <Network strokeWidth={2.5} />, title: t('features.f4_title', "Community Grid"), desc: t('features.f4_desc', "One device protects multiple farms.") }
+        { icon: <Bug strokeWidth={2.5} />, title: t('features.f1_title', "Pest Detection"), desc: t('features.f1_desc', "Identify crop diseases and pests instantly.") },
+        { icon: <MessageCircle strokeWidth={2.5} />, title: t('features.f2_title', "WhatsApp Alerts"), desc: t('features.f2_desc', "Receive real-time alerts directly on WhatsApp.") },
+        { icon: <Mic strokeWidth={2.5} />, title: t('features.f3_title', "Voice Alerts"), desc: t('features.f3_desc', "Get spoken guidance in your local language.") },
+        { icon: <ShieldCheck strokeWidth={2.5} />, title: t('features.f4_title', "24/7 Monitoring"), desc: t('features.f4_desc', "Continuous crop monitoring and updates.") },
+        { icon: <Smartphone strokeWidth={2.5} />, title: t('features.f5_title', "No App Needed"), desc: t('features.f5_desc', "Works on any phone, no installation required.") }
     ];
 
     return (
@@ -21,9 +22,9 @@ export default function FeaturesSection() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-dark tracking-tight">{t('features.title', 'Why GroundBit?')}</h2>
+                    <h2 className="text-4xl md:text-5xl font-extrabold text-dark tracking-tight">{t('features.title', 'Why Farmers Choose GroundBit')}</h2>
                 </motion.div>
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
                     {features.map((f, i) => (
                         <motion.div
                             key={i}

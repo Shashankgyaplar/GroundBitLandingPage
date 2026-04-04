@@ -9,7 +9,6 @@ const DifferentiatorSection = React.lazy(() => import('./components/Differentiat
 const ProblemSection = React.lazy(() => import('./components/ProblemSection'));
 const SolutionSection = React.lazy(() => import('./components/SolutionSection'));
 const FeaturesSection = React.lazy(() => import('./components/FeaturesSection'));
-const Testimonials = React.lazy(() => import('./components/Testimonials'));
 const DemoSection = React.lazy(() => import('./components/DemoSection'));
 const SignupForm = React.lazy(() => import('./components/SignupForm'));
 const Footer = React.lazy(() => import('./components/Footer'));
@@ -43,7 +42,6 @@ function App() {
           <ProblemSection />
           <SolutionSection />
           <FeaturesSection />
-          <Testimonials />
           <DemoSection />
           <div id="signup">
             <SignupForm />

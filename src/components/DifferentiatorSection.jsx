@@ -1,15 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Users, MessageSquare, AlertTriangle } from 'lucide-react';
+import { ShieldCheck, Users, Bug, MessageCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export default function DifferentiatorSection() {
     const { t } = useTranslation();
     const steps = [
-        { icon: <Cpu size={36} className="text-emerald-500" />, title: t('diff.s1_title', "1. Watches 24/7"), desc: t('diff.s1_desc', "ESP32 monitors field continuously."), bgColor: "bg-emerald-50" },
-        { icon: <MessageSquare size={36} className="text-blue-500" />, title: t('diff.s2_title', "2. Ask Questions"), desc: t('diff.s2_desc', "Report issues via WhatsApp or missed call."), bgColor: "bg-blue-50" },
-        { icon: <AlertTriangle size={36} className="text-amber-500" />, title: t('diff.s3_title', "3. AI Detects"), desc: t('diff.s3_desc', "Spots pests via audio instantly."), bgColor: "bg-amber-50" },
-        { icon: <Users size={36} className="text-brand" />, title: t('diff.s4_title', "4. Community Alert"), desc: t('diff.s4_desc', "1 detection protects 50 farms."), bgColor: "bg-brand-light/50" }
+        { icon: <ShieldCheck size={36} className="text-emerald-500" />, title: t('diff.s1_title', "1. Monitors 24/7"), desc: t('diff.s1_desc', "Sensors continuously watch your fields for threats."), bgColor: "bg-emerald-50" },
+        { icon: <Bug size={36} className="text-amber-500" />, title: t('diff.s2_title', "2. Detects Pests"), desc: t('diff.s2_desc', "AI identifies pests and diseases instantly."), bgColor: "bg-amber-50" },
+        { icon: <MessageCircle size={36} className="text-blue-500" />, title: t('diff.s3_title', "3. Sends Alerts"), desc: t('diff.s3_desc', "WhatsApp and voice alerts reach you immediately."), bgColor: "bg-blue-50" },
+        { icon: <Users size={36} className="text-brand" />, title: t('diff.s4_title', "4. Protects Community"), desc: t('diff.s4_desc', "1 detection alert protects 50 nearby farms."), bgColor: "bg-brand-light/50" }
     ];
 
     return (

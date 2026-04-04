@@ -51,9 +51,6 @@ export default function Navbar() {
                             ))}
                         </div>
                     </div>
-                    <a href="#signup" className="btn-primary text-sm md:text-base px-6 py-2.5 inline-block shadow-brand/30 hover:-translate-y-0.5 font-bold tracking-wide">
-                        {t('nav.join', 'Get Protected')}
-                    </a>
                 </div>
             </div>
         </nav>

@@ -14,7 +14,7 @@ export default function Footer() {
                 </div>
 
                 <div className="text-slate-600 font-bold tracking-wide flex items-center gap-2 bg-slate-50 border border-slate-200 px-6 py-3 rounded-full text-sm shadow-sm hover:shadow-md transition-shadow">
-                    Built for Indian Farmers <span className="text-xl leading-none ml-1 relative -top-[1px]">🇮🇳</span>
+                    Pest Detection & Alerts for Indian Farmers <span className="text-xl leading-none ml-1 relative -top-[1px]">🇮🇳</span>
                 </div>
 
                 <div className="text-slate-500 font-medium">
